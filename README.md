@@ -22,6 +22,7 @@ Some major issues in the competition were: scalability and I used too many param
 ### Strategy for Market Making
 
 My market making strategy was quite simple:
+
 1.Step: I'm calculating a theoretical value of the asset based on the current LOB only (so no forecasting of the theo. value), 
         using liquidity (volume) and bid-ask prices at all available levels with my own microprice calculations.
         In my microprice calculation, I give values closer to the level 1 microprice (only using top of the book information of volume and bid-ask prices) higher weights than values further away (so it is distance based).
