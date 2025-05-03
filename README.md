@@ -19,6 +19,9 @@ I'm also only uploading my ideas, not the ones from my teammates. I won't share 
 Some major issues in the competition were: scalability and I used too many parameters, which needed to be estimated. In an attempt to solve the scalability issue, I tried to create generic functions for the taking, clearing and market making for all assets traded, which was successful, but for compatability reasons, I didn't include it in our teams code since most of the new assets were only using new trading strategies, like statistical arbitrage for the basket and something like delta-gamma hedging for the options, but when developing an algorithm for a huge system of assets, generic functions with as little as possible parameters, which can be adaptively calculated, would be the goal.
 
 
+
+The strategy for Taking and Clearing was quite simple, we just buy when the offered price is below a certain amount of our theoretical value and for clearing we try to close positions which are close the EV=0 when we can unwind our position.
+
 ### Strategy for Market Making
 
 My market making strategy was quite simple:
@@ -36,4 +39,14 @@ My market making strategy was quite simple:
 
 5.Step: Position sizing. As a market maker I always want to be trading the same lot size on both sides, otherwise I give the competition information in which direction I want to skew my prices. 
 
-I also tried the Guilbaud & Pham Framework  
+I also tried the Guilbaud & Pham Framework.
+In the future, I should also try to forecast the theoretical value, if the competition allows for it.
+
+### Strategy for INK (or in general prediction/forecasting a highly volatile asset)
+
+For INK I tried every simple strategy, from ARIMA to any moving averages (simple, exponential) or oscillator strategies (Bollinger bands, crossing moving averages, RSI). On the original data RSI and bollinger bands worked quite well,
+but I also tested a z-score based version of mean reversion, which worked a little bit better. But after round 2 they changed the distribution of the data set since a few teams cheated of using their knowledge of last years data set distribution, so I had to retry those methods, and now EMA worked. I hope for the next year they will allow that we can use deep learning libraries and also import our models.
+
+### Strategy for baskets
+
+### Strategy for options of the same underlying with different strikes
