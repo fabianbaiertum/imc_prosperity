@@ -6,3 +6,6 @@ tested, but not used in our final submission (such as the RSI_bet_sizing.py).
 In round 1, our team was ranked 19, but a few of the contestants in front of us were reset to 0 points due to hardcoding their answers.
 
 For cubic_atm_spline.py I just wanted to test if we interpolate the implied volatilities for the different strikes to estimate the implied vol. ATM at each time step, if we could find a pattern for it, which we could use for a trading strategy, it didn't work too well.
+
+RSI_bet_sizing.py tries to implement the bet sizing in case we run an RSI based strategy, with focus on having a higher bet size when we are more confident, i.e. if RSI>90: we are highly confident or if it is RSI<10: we are also highly confident probabilitically speaking, given a specific distribution.
+
