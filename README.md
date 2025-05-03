@@ -49,4 +49,11 @@ but I also tested a z-score based version of mean reversion, which worked a litt
 
 ### Strategy for baskets
 
+There were 3 possible stat arb scenarios, we used all of them, but for simplicity we put all the liquidity in the basket 1 vs. the three components of this basket, then what was left of liquidity in basket 2 vs. basket 2 components and then with the remaining volume we put it into our combination of them (something like 2 Basket2 - 1 Basket1 +..+... = some combination of components). I used something similar to the book: Algorithmic Trading and Quantitative Strategies by Velu, Hardy and Nehren for their pairs trading algorithm on page 176. 
+My strategy was to first again just calculate theo. value for the basket1 and all of the components using my microprice calculations with the LOB as input. Then I compare 
+price_basket1-price_basket_1_components, e.g. let basket1 be 2 shares of apple stock and 3 shares of tesla stock, then price basket 1 components is 2*price_apple+3*price_tesla.
+If this difference is larger as epsilon+ some estimated spread crossing costs (e.g. just summing all the spreads up) basket1 would be overpriced in this case. Thus we short basket1 and go long in the components in appropriate proportions.
+We must take the minimum of our available position limits, to not breach anything. If the price mean reverts, we close the position and wait until either the basket or its components gets overpriced.
+
+
 ### Strategy for options of the same underlying with different strikes
