@@ -8,7 +8,7 @@ def arima_forecast(series, p=1, d=0, q=0):
     Parameters
     ----------
     series : list or np.array
-        Original time series data (latest value last).
+        Original time series data (latest value last). Here we input our array of previously estimated theoretical prices, e.g. with my microprice calculation.
     p : int
         Number of AR (autoregressive) terms.
     d : int
