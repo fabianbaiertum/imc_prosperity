@@ -11,7 +11,7 @@ RSI_bet_sizing.py tries to implement the bet sizing in case we run an RSI based 
 
 I'm also only uploading my ideas, not the ones from my teammates. I won't share my final code as it might impact future trading competitions.
 
-
+bollingerbands.py was one of the first iterations for INK, also includes Taking, Clearing and MM logic, but a simplified version of it.
 
 
 The strategy for Taking and Clearing was quite simple, we just buy when the offered price is below a certain amount of our theoretical value and for clearing we try to close positions which are close the EV=0 when we can unwind our position.
