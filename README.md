@@ -54,6 +54,13 @@ My strategy was to first again just calculate theo. value for the basket1 and al
 price_basket1-price_basket_1_components, e.g. let basket1 be 2 shares of apple stock and 3 shares of tesla stock, then price basket 1 components is 2*price_apple+3*price_tesla.
 If this difference is larger as epsilon+ some estimated spread crossing costs (e.g. just summing all the spreads up) basket1 would be overpriced in this case. Thus we short basket1 and go long in the components in appropriate proportions.
 We must take the minimum of our available position limits, to not breach anything. If the price mean reverts, we close the position and wait until either the basket or its components gets overpriced.
+For position sizing, the bigger the divergence of the assets, the larger the position should be.
 
 
-### Strategy for options of the same underlying with different strikes
+### Strategy for options on the same underlying with different strikes
+
+I used the basic BS model to price my options, the interest rate was set to r=0, for all other inputs, I knew the values, besides the implied volatility.
+The strike was obviously known, maturity had to be recalculated every time step, so T=7 at t=0, then at t=1 T-time_step_size. For the underlying price I just used my microprice function using the LOB of the underlying.
+So the last challenge was to estimate the implied volatility, for it I used the bisection method, so I input different imp. vol. values until I'm close enough to the microprice quoted on the market. 
+
+My first strategy was just delta hedging my positions when I find an undervalued/overvalued option.
