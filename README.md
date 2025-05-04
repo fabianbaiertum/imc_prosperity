@@ -63,4 +63,8 @@ I used the basic BS model to price my options, the interest rate was set to r=0,
 The strike was obviously known, maturity had to be recalculated every time step, so T=7 at t=0, then at t=1 T-time_step_size. For the underlying price I just used my microprice function using the LOB of the underlying.
 So the last challenge was to estimate the implied volatility, for it I used the bisection method, so I input different imp. vol. values until I'm close enough to the microprice quoted on the market. 
 
-My first strategy was just delta hedging my positions when I find an undervalued/overvalued option.
+My first strategy was just delta hedging my positions when I find an undervalued/overvalued option. I would calculate the total delta of the options, then decide which ones are more reasonable (larger edge) and then hedge the trades I would like to take with the underlying with -delta amount of units, and take the minimum that no position limit is breached. To keep my delta hedging active, I recalculate the delta every time step and adjust my positions. This simple strategy alone made more profits than all previous strategies combined, but the PnL was highly volatile, so I also included delta-gamma hedging since the underlying was too volatile and thus we also need to consider gamma. 
+For delta-gamma hedging I split the options into groups, the ones which I buy and the ones which I gamma hedge with. Also, for T going to zero, i.e. close to expiry of the options, I don't want to be negatively effected by the time decay.
+Thus close to expiry, I only want to short options (which are OTM) or take long options with a large enough edge and also I want to close them as soon as possible. 
+
+For future competitions, I should also include vega hedging to stay vega neutral (flat on volatility) or to forecast implied vol. to decide if I should be vega positive or negative in the current market.
