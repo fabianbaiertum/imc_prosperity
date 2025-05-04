@@ -14,12 +14,6 @@ I'm also only uploading my ideas, not the ones from my teammates. I won't share 
 
 
 
-#### To fix for upcoming competitions
-
-Some major issues in the competition were: scalability and I used too many parameters, which needed to be estimated. In an attempt to solve the scalability issue, I tried to create generic functions for the taking, clearing and market making for all assets traded, which was successful, but for compatability reasons, I didn't include it in our teams code since most of the new assets were only using new trading strategies, like statistical arbitrage for the basket and something like delta-gamma hedging for the options, but when developing an algorithm for a huge system of assets, generic functions with as little as possible parameters, which can be adaptively calculated, would be the goal.
-
-
-
 The strategy for Taking and Clearing was quite simple, we just buy when the offered price is below a certain amount of our theoretical value and for clearing we try to close positions which are close the EV=0 when we can unwind our position.
 
 ### Strategy for Market Making
@@ -67,4 +61,8 @@ My first strategy was just delta hedging my positions when I find an undervalued
 For delta-gamma hedging I split the options into groups, the ones which I buy and the ones which I gamma hedge with. Also, for T going to zero, i.e. close to expiry of the options, I don't want to be negatively effected by the time decay.
 Thus close to expiry, I only want to short options (which are OTM) or take long options with a large enough edge and also I want to close them as soon as possible. 
 
+
+## To fix for upcoming competitions
+
+Some major issues in the competition were: scalability and I used too many parameters, which needed to be estimated. In an attempt to solve the scalability issue, I tried to create generic functions for the taking, clearing and market making for all assets traded, which was successful, but for compatability reasons, I didn't include it in our teams code since most of the new assets were only using new trading strategies, like statistical arbitrage for the basket and something like delta-gamma hedging for the options, but when developing an algorithm for a huge system of assets, generic functions with as little as possible parameters, which can be adaptively calculated, would be the goal.
 For future competitions, I should also include vega hedging to stay vega neutral (flat on volatility) or to forecast implied vol. to decide if I should be vega positive or negative in the current market.
