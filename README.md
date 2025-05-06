@@ -9,7 +9,7 @@ For cubic_atm_spline.py I just wanted to test if we interpolate the implied vola
 
 RSI_bet_sizing.py tries to implement the bet sizing in case we run an RSI based strategy, with focus on having a higher bet size when we are more confident, i.e. if RSI>90: we are highly confident or if it is RSI<10: we are also highly confident probabilitically speaking, given a specific distribution.
 
-I'm also only uploading my ideas, not the ones from my teammates. I won't share my final code as it might impact future trading competitions.
+I won't share my final code as it might impact future trading competitions.
 
 bollingerbands.py was one of the first iterations for INK, also includes Taking, Clearing and MM logic, but a simplified version of it.
 
