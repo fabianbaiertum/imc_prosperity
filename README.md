@@ -70,4 +70,4 @@ For future competitions, I should also include vega hedging to stay vega neutral
 For market making:      I also tried the Guilbaud & Pham Framework.
                         In the future, I should also try to forecast the theoretical value, if the competition allows for it.
 
-also need to learn more about: market microstructure, options trading, time series analysis
+also need to learn more about: market microstructure, options trading, time series analysis, optimal execution (haven't at all looked at fill ratio for example, and later also slippage)
