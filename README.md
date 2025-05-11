@@ -70,4 +70,9 @@ For future competitions, I should also include vega hedging to stay vega neutral
 For market making:      I also tried the Guilbaud & Pham Framework.
                         In the future, I should also try to forecast the theoretical value, if the competition allows for it.
 
+For  stat arb:         need different entry and exit thresholds. Something like if spread larger 1 (or any value we optimize for) standard deviation, then enter and exit if 0.1 (or any other value we optimize for) std on the same sign is                         reached (with std estimated by either historic data in advance and                          
+                       have it as a fixed value, or std estimated with a window of prices). 
+                       Position sizing should always be maximum available for simplicity!
+
+
 also need to learn more about: market microstructure, options trading, time series analysis, optimal execution (haven't at all looked at fill ratio for example, and later also slippage)
