@@ -75,4 +75,4 @@ For  stat arb:         need different entry and exit thresholds. Something like 
                        Position sizing should always be maximum available for simplicity!
 
 
-also need to learn more about: market microstructure, options trading, time series analysis, optimal execution (haven't at all looked at fill ratio for example, and later also slippage)
+also need to learn more about: market microstructure, options trading, time series analysis, optimal execution (haven't at all looked at fill ratio for example, and later also slippage and price impact)
